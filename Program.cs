@@ -2,13 +2,16 @@ using System;
 
 class Program
 {
-    static void Main()
-    {
-        string[] array1 = new string[5] { "Russia", "Denmark", "Kazan", "US", "UK" };
-        string[] array2 = new string[array1.Length];
+static void Main()
+{
+    Console.WriteLine("Введите строки через пробел:");
+    string[] array1 = Console.ReadLine().Split(' ');
+    string[] array2 = new string[array1.Length];
 
-        SecondArrayWithIF(array1, array2);
-        PrintArray(array2);
+    SecondArrayWithIF(array1, array2);
+    PrintArray(array2);
+}
+
     }
 
     static void SecondArrayWithIF(string[] array1, string[] array2)
@@ -24,15 +27,15 @@ class Program
         }
     }
 
-    static void PrintArray(string[] array)
+static void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
     {
-        for (int i = 0; i < array.Length; i++)
+        if (!string.IsNullOrEmpty(array[i]))
         {
-            if (!string.IsNullOrEmpty(array[i]))
-            {
-                Console.Write($"{array[i]} ");
-            }
+            Console.Write($"{array[i]} ");
         }
-        Console.WriteLine();
     }
+    Console.WriteLine();
 }
+
