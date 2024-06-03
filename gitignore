@@ -1,0 +1,8 @@
+bin/
+obj/
+*.user
+*.csproj.user
+*.suo
+*.tmp
+*.log
+*.vs
